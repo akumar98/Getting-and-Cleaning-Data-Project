@@ -47,6 +47,6 @@ data_melt <- melt(all.merged, id=c("Activity", "Activity_Desc", "Subject"))
 mean_data <- dcast(data_melt, Activity+Activity_Desc+Subject ~variable, mean)
 
 ## Create a file with the new tidy dataset
-write.table(mean_data,"./tidy_data.txt")
+write.table(mean_data,"./tidy_data.txt", row.name=FALSE)
 
 }
