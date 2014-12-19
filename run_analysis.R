@@ -1,5 +1,7 @@
 # Merges the training and the test sets to create one data set.
 library(reshape2)
+
+run_analysis <- function() {
 #Load Data
 #Common Data
 featuresLabels <- read.table("./data/UCI HAR Dataset/features.txt", colClasses="character")
@@ -46,3 +48,5 @@ mean_data <- dcast(data_melt, Activity+Activity_Desc+Subject ~variable, mean)
 
 ## Create a file with the new tidy dataset
 write.table(mean_data,"./tidy_data.txt")
+
+}
